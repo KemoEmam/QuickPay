@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_flow/core/helper/functions/build_app_bar.dart';
 import 'package:payment_flow/features/presentation/views/widgets/cart_view_body.dart';
 
 class CartView extends StatelessWidget {
@@ -6,8 +7,9 @@ class CartView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: CartViewBody(),
+    return Scaffold(
+      appBar: buildAppBar(context, title: 'My Cart'),
+      body: const CartViewBody(),
     );
   }
 }
