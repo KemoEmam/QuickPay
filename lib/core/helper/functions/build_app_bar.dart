@@ -13,8 +13,8 @@ AppBar buildAppBar(BuildContext context, {required String title}) {
       ),
     ),
     centerTitle: true,
-    title: const Text(
-      'My Cart',
+    title: Text(
+      title,
       style: AppTextStyles.interMedium25,
     ),
   );
