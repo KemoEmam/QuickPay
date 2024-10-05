@@ -3,7 +3,7 @@ import 'package:payment_flow/core/themes/styles/app_images.dart';
 import 'package:payment_flow/core/themes/styles/app_text_styles.dart';
 import 'package:payment_flow/features/presentation/views/widgets/custom_button.dart';
 import 'package:payment_flow/features/presentation/views/widgets/custom_divider.dart';
-
+import 'package:payment_flow/features/presentation/views/widgets/floating_item_info.dart';
 import 'order_info_item.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -17,11 +17,21 @@ class CartViewBody extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(height: 25),
-            Center(
-              child: Image.asset(
-                AppImages.imagesBasketP,
-                height: 350,
-              ),
+            Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Center(
+                  child: Image.asset(
+                    AppImages.imagesBasket, // Replace with your asset
+                    height: MediaQuery.of(context).size.height * 0.45,
+                  ),
+                ),
+                Positioned(
+                  top: MediaQuery.of(context).size.height * 0.1,
+                  left: MediaQuery.of(context).size.width * 0.37,
+                  child: const FloatingCartItem(),
+                ),
+              ],
             ),
             const SizedBox(height: 25),
             const OrderInfoItem(
@@ -44,13 +54,14 @@ class CartViewBody extends StatelessWidget {
               title: 'Total',
               price: r'$60.28',
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 22),
             CustomButton(
-                textStyle: AppTextStyles.interMedium22,
-                textColor: Colors.black,
-                text: 'Complete Order',
-                onPressed: () {},
-                buttonColor: const Color(0xff34A853))
+              textStyle: AppTextStyles.interMedium22,
+              textColor: Colors.black,
+              text: 'Complete Order',
+              onPressed: () {},
+              buttonColor: const Color(0xff34A853),
+            ),
           ],
         ),
       ),
