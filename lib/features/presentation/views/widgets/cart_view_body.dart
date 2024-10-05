@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payment_flow/core/themes/styles/app_images.dart';
 import 'package:payment_flow/core/themes/styles/app_text_styles.dart';
+import 'package:payment_flow/features/presentation/views/payment_details_view.dart';
 import 'package:payment_flow/features/presentation/views/widgets/custom_button.dart';
 import 'package:payment_flow/features/presentation/views/widgets/custom_divider.dart';
 import 'package:payment_flow/features/presentation/views/widgets/floating_item_info.dart';
@@ -59,7 +60,13 @@ class CartViewBody extends StatelessWidget {
               textStyle: AppTextStyles.interMedium22,
               textColor: Colors.black,
               text: 'Complete Order',
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const PaymentDetailsView(),
+                  ),
+                );
+              },
               buttonColor: const Color(0xff34A853),
             ),
           ],
