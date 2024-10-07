@@ -1,27 +1,35 @@
 import 'package:flutter/material.dart';
 
 class PaymentMethodItem extends StatelessWidget {
-  const PaymentMethodItem(
-      {super.key, required this.cardType, this.width = 100});
+  const PaymentMethodItem({
+    super.key,
+    required this.cardType,
+    this.width = 100,
+    required this.isActive,
+  });
 
   final Widget cardType;
   final double width;
+  final bool isActive;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width, // Dynamic width
-      height: width * 0.6, // Keeping a consistent aspect ratio
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      width: width,
+      height: width * 0.6,
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: const BorderSide(width: 1.50, color: Color(0xFF34A853)),
+          side: BorderSide(
+              width: 1.50,
+              color: isActive ? const Color(0xFF34A853) : Colors.grey),
           borderRadius: BorderRadius.circular(17),
         ),
-        shadows: const [
+        shadows: [
           BoxShadow(
-            color: Color(0xFF34A853),
-            blurRadius: .5,
-            offset: Offset(0, 0),
+            color: isActive ? const Color(0xFF34A853) : Colors.grey,
+            blurRadius: 1,
+            offset: const Offset(0, 0),
             spreadRadius: 0,
           ),
         ],
@@ -34,8 +42,7 @@ class PaymentMethodItem extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding:
-              const EdgeInsets.all(12), // Add padding to control image size
+          padding: const EdgeInsets.all(12),
           child: cardType,
         ),
       ),
