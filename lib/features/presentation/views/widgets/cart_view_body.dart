@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_flow/core/themes/styles/app_colors.dart';
 import 'package:payment_flow/core/themes/styles/app_images.dart';
 import 'package:payment_flow/core/themes/styles/app_text_styles.dart';
 import 'package:payment_flow/features/presentation/views/payment_details_view.dart';
@@ -55,7 +56,7 @@ class CartViewBody extends StatelessWidget {
               title: 'Total',
               price: r'$60.28',
             ),
-            const SizedBox(height: 22),
+            const SizedBox(height: 40),
             CustomButton(
               textStyle: AppTextStyles.interMedium22,
               textColor: Colors.black,
@@ -67,7 +68,7 @@ class CartViewBody extends StatelessWidget {
                   ),
                 );
               },
-              buttonColor: const Color(0xff34A853),
+              buttonColor: AppColors.primaryColor,
             ),
           ],
         ),

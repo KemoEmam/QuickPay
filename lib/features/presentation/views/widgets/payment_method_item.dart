@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payment_flow/core/themes/styles/app_colors.dart';
 
 class PaymentMethodItem extends StatelessWidget {
   const PaymentMethodItem({
@@ -22,12 +23,12 @@ class PaymentMethodItem extends StatelessWidget {
         shape: RoundedRectangleBorder(
           side: BorderSide(
               width: 1.50,
-              color: isActive ? const Color(0xFF34A853) : Colors.grey),
+              color: isActive ? AppColors.primaryColor : Colors.grey),
           borderRadius: BorderRadius.circular(17),
         ),
         shadows: [
           BoxShadow(
-            color: isActive ? const Color(0xFF34A853) : Colors.grey,
+            color: isActive ? AppColors.primaryColor : Colors.grey,
             blurRadius: 1,
             offset: const Offset(0, 0),
             spreadRadius: 0,
