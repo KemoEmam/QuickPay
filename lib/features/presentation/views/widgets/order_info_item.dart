@@ -6,23 +6,27 @@ class OrderInfoItem extends StatelessWidget {
     super.key,
     required this.title,
     required this.price,
-    this.textStyle, // Optional textStyle
+    this.titleStyle, // Optional title textStyle
+    this.priceStyle, // Optional price textStyle
   });
 
   final String title, price;
-  final TextStyle? textStyle;
+  final TextStyle? titleStyle;
+  final TextStyle? priceStyle;
 
   @override
   Widget build(BuildContext context) {
     // Fallback to AppTextStyles.interRegular18 if no style is provided
-    final TextStyle effectiveTextStyle =
-        textStyle ?? AppTextStyles.interRegular18;
+    final TextStyle effectiveTitleTextStyle =
+        titleStyle ?? AppTextStyles.interRegular18;
+    final TextStyle effectivePriceTextStyle =
+        priceStyle ?? AppTextStyles.interRegular18;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(title, style: effectiveTextStyle),
-        Text(price, style: effectiveTextStyle),
+        Text(title, style: effectiveTitleTextStyle),
+        Text(price, style: effectivePriceTextStyle),
       ],
     );
   }

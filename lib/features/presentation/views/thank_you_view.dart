@@ -6,9 +6,12 @@ class ThankYouView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(
-        child: ThankYouViewBody(),
+        child: Transform.translate(
+          offset: const Offset(0, 55),
+          child: const ThankYouViewBody(),
+        ),
       ),
     );
   }

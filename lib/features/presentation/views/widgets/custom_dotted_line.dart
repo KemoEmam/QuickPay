@@ -11,7 +11,7 @@ class CustomDottedLine extends StatelessWidget {
     return Positioned(
       left: 0,
       right: 0,
-      bottom: MediaQuery.of(context).size.height * 0.25 + 16,
+      bottom: MediaQuery.of(context).size.height * 0.2 + 16,
       child: DottedLine(
         direction: Axis.horizontal,
         lineLength: MediaQuery.of(context).size.width * 0.7,

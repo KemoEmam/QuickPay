@@ -52,7 +52,7 @@ class CartViewBody extends StatelessWidget {
             const CustomDivider(),
             const SizedBox(height: 20),
             const OrderInfoItem(
-              textStyle: AppTextStyles.interSemiBold24,
+              titleStyle: AppTextStyles.interSemiBold24,
               title: 'Total',
               price: r'$60.28',
             ),
