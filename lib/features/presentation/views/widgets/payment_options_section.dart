@@ -7,10 +7,7 @@ import 'payment_method_item.dart';
 class PaymentOptionsSection extends StatefulWidget {
   const PaymentOptionsSection({
     super.key,
-    required this.screenWidth,
   });
-
-  final double screenWidth;
 
   @override
   State<PaymentOptionsSection> createState() => _PaymentOptionsSectionState();
@@ -32,7 +29,7 @@ class _PaymentOptionsSectionState extends State<PaymentOptionsSection> {
           },
           child: PaymentMethodItem(
             cardType: Image.asset(AppImages.imagesVisaCard),
-            width: widget.screenWidth * 0.25,
+            width: MediaQuery.of(context).size.width * 0.25,
             isActive: selectedCardIndex == 0,
           ),
         ),
@@ -45,7 +42,7 @@ class _PaymentOptionsSectionState extends State<PaymentOptionsSection> {
           },
           child: PaymentMethodItem(
             cardType: SvgPicture.asset(AppImages.imagesPaypal),
-            width: widget.screenWidth * 0.25,
+            width: MediaQuery.of(context).size.width * 0.25,
             isActive: selectedCardIndex == 1,
           ),
         ),
@@ -61,7 +58,7 @@ class _PaymentOptionsSectionState extends State<PaymentOptionsSection> {
               AppImages.imagesApplePay,
               fit: BoxFit.scaleDown,
             ),
-            width: widget.screenWidth * 0.25,
+            width: MediaQuery.of(context).size.width * 0.25,
             isActive: selectedCardIndex == 2,
           ),
         ),

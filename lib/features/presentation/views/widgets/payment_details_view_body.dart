@@ -16,14 +16,13 @@ class _PaymentDetailsViewBodyState extends State<PaymentDetailsViewBody> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
   Widget build(BuildContext context) {
-    final screenWidth = MediaQuery.of(context).size.width;
     return CustomScrollView(
       slivers: [
         SliverToBoxAdapter(
           child: Column(
             children: [
               const SizedBox(height: 5),
-              PaymentOptionsSection(screenWidth: screenWidth),
+              const PaymentOptionsSection(),
               const SizedBox(height: 5),
               CustomCreditCard(
                 autovalidateMode: autovalidateMode,
