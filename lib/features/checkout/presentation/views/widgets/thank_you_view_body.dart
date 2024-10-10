@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payment_flow/features/presentation/views/widgets/bill_details_body.dart';
-import 'package:payment_flow/features/presentation/views/widgets/custom_check_mark.dart';
-import 'package:payment_flow/features/presentation/views/widgets/custom_dotted_line.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/bill_details_body.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_check_mark.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_dotted_line.dart';
 
 class ThankYouViewBody extends StatelessWidget {
   const ThankYouViewBody({super.key});

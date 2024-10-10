@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:payment_flow/features/presentation/views/cart_view.dart';
+import 'package:payment_flow/features/checkout/presentation/views/cart_view.dart';
 
 void main() {
   runApp(const PaymentFlow());

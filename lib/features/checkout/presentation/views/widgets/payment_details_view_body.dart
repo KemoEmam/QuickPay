@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:payment_flow/features/presentation/views/thank_you_view.dart';
-import 'package:payment_flow/features/presentation/views/widgets/custom_credit_card.dart';
-import 'package:payment_flow/features/presentation/views/widgets/payment_button.dart';
-import 'package:payment_flow/features/presentation/views/widgets/payment_options_section.dart';
+import 'package:payment_flow/features/checkout/presentation/views/thank_you_view.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_credit_card.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/payment_button.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/payment_options_section.dart';
 
 class PaymentDetailsViewBody extends StatefulWidget {
   const PaymentDetailsViewBody({super.key});

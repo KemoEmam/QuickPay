@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:payment_flow/core/themes/styles/app_colors.dart';
 import 'package:payment_flow/core/themes/styles/app_text_styles.dart';
-import 'package:payment_flow/features/presentation/views/widgets/custom_button.dart';
-import 'package:payment_flow/features/presentation/views/widgets/payment_options_section.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_button.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/payment_options_section.dart';
 
 class PaymentMehodsBottomSheet extends StatelessWidget {
   const PaymentMehodsBottomSheet({super.key});

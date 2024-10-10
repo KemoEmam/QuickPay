@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:payment_flow/core/themes/styles/app_colors.dart';
 import 'package:payment_flow/core/themes/styles/app_images.dart';
 import 'package:payment_flow/core/themes/styles/app_text_styles.dart';
-import 'package:payment_flow/features/presentation/views/widgets/custom_button.dart';
-import 'package:payment_flow/features/presentation/views/widgets/custom_divider.dart';
-import 'package:payment_flow/features/presentation/views/widgets/floating_item_info.dart';
-import 'package:payment_flow/features/presentation/views/widgets/payment_methods_bottom_sheet.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_button.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_divider.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/floating_item_info.dart';
+import 'package:payment_flow/features/checkout/presentation/views/widgets/payment_methods_bottom_sheet.dart';
 import 'order_info_item.dart';
 
 class CartViewBody extends StatelessWidget {

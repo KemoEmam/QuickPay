@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_credit_card: ^4.0.1
+  flutter_stripe: ^11.2.0
   flutter_svg: ^2.0.10+1
   forbidden_pack:
     git:
