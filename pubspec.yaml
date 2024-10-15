@@ -28,17 +28,24 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  bloc: ^8.1.4
   cupertino_icons: ^1.0.8
+  dartz: ^0.10.1
+  dio: ^5.7.0
   dotted_line: ^3.2.2
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.1.6
   flutter_credit_card: ^4.0.1
+  flutter_dotenv: ^5.1.0
   flutter_stripe: ^11.2.0
   flutter_svg: ^2.0.10+1
   forbidden_pack:
     git:
       url: https://github.com/KemoEmam/ForbiddenPack.git
       ref: main
+  get_it: ^8.0.0
+  meta: ^1.15.0
   modal_bottom_sheet: ^3.0.0
 
 dev_dependencies:
