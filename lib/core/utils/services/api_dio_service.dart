@@ -14,24 +14,24 @@ class ApiDioService {
           ),
         );
 
-  Future<Map<String, dynamic>> post(
+  Future<Response> post(
       {required String endPoint,
-      Map<String, dynamic>? body,
+      required body,
       String? token,
       String? contentType}) async {
     try {
       var response = await _dio.post(endPoint,
-          queryParameters: body,
+          data: body,
           options: Options(
               headers: {'Authorization': 'Bearer $token'},
               contentType: contentType));
-      return response.data;
+      return response;
     } on DioException catch (e) {
       throw _handleError(e);
     }
   }
 
-  Future<Map<String, dynamic>> get(
+  Future<Response> get(
       {required String endPoint,
       Map<String, dynamic>? body,
       String? token,
@@ -48,7 +48,7 @@ class ApiDioService {
     }
   }
 
-  Future<Map<String, dynamic>> put(
+  Future<Response> put(
       {required String endPoint, required Map<String, dynamic> data}) async {
     try {
       var response = await _dio.put(endPoint, data: data);
@@ -58,7 +58,7 @@ class ApiDioService {
     }
   }
 
-  Future<Map<String, dynamic>> delete({required String endPoint}) async {
+  Future<Response> delete({required String endPoint}) async {
     try {
       var response = await _dio.delete(endPoint);
       return response.data;

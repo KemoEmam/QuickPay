@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment_flow/core/themes/styles/app_colors.dart';
 import 'package:payment_flow/core/themes/styles/app_images.dart';
 import 'package:payment_flow/core/themes/styles/app_text_styles.dart';
+import 'package:payment_flow/core/utils/services/service_locator.dart';
+import 'package:payment_flow/features/checkout/data/repos/checkout_repo.dart';
+import 'package:payment_flow/features/checkout/presentation/views/manager/stripe_payment/stripe_payment_cubit.dart';
 import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_button.dart';
 import 'package:payment_flow/features/checkout/presentation/views/widgets/custom_divider.dart';
 import 'package:payment_flow/features/checkout/presentation/views/widgets/floating_item_info.dart';
@@ -69,7 +73,12 @@ class CartViewBody extends StatelessWidget {
                 // );
                 showModalBottomSheet(
                     context: context,
-                    builder: (context) => const PaymentMehodsBottomSheet());
+                    builder: (context) => BlocProvider(
+                          create: (context) => StripePaymentCubit(
+                            getIt<CheckoutRepo>(),
+                          ),
+                          child: const PaymentMehodsBottomSheet(),
+                        ));
               },
               buttonColor: AppColors.primaryColor,
             ),

@@ -8,6 +8,7 @@ class CustomButton extends StatelessWidget {
   final double borderRadius;
   final TextStyle? textStyle;
   final double? fontSize;
+  final bool isLoading;
 
   const CustomButton({
     super.key,
@@ -18,6 +19,7 @@ class CustomButton extends StatelessWidget {
     this.borderRadius = 16,
     this.textStyle,
     this.fontSize,
+    this.isLoading = false,
   });
 
   @override
@@ -35,14 +37,16 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: textStyle?.copyWith(color: textColor) ??
-              TextStyle(
-                  fontSize: fontSize ?? 16,
-                  color: textColor,
-                  fontWeight: FontWeight.bold),
-        ),
+        child: isLoading
+            ? const CircularProgressIndicator()
+            : Text(
+                text,
+                style: textStyle?.copyWith(color: textColor) ??
+                    TextStyle(
+                        fontSize: fontSize ?? 16,
+                        color: textColor,
+                        fontWeight: FontWeight.bold),
+              ),
       ),
     );
   }

@@ -13,8 +13,8 @@ class StripePaymentCubit extends Cubit<StripePaymentState> {
   Future<void> makePayment(
       PaymentIntentInputModel paymentIntentInputModel) async {
     emit(StripePaymentLoading());
-    var paymentIntentModel =
-        await checkoutRepo.makePayment(paymentIntentInputModel);
+    var paymentIntentModel = await checkoutRepo.makePayment(
+        paymentIntentInputModel: paymentIntentInputModel);
     paymentIntentModel.fold(
       (L) => emit(StripePaymentFailure(L.errMessage)),
       (R) => emit(

@@ -10,22 +10,22 @@ class StripeService {
 
   StripeService({required this.apiDioService});
   Future<PaymentIntentModel> createPaymentIntent(
-      PaymentIntentInputModel inputModel) async {
+      PaymentIntentInputModel paymentIntentInputModel) async {
     try {
       var response = await apiDioService.post(
-        endPoint: 'https://api.stripe.com/v1/payment_intents',
-        body: inputModel.toJson(),
-        token: dotenv.env['STRIPE_SECRET_KEY'],
+        body: paymentIntentInputModel.toJson(),
+        endPoint: dotenv.env['BASE_URL']!,
+        token: dotenv.env['SECRET_KEY_TOKEN'],
+        contentType: 'application/x-www-form-urlencoded',
       );
-      var paymentIntentModel = PaymentIntentModel.fromJson(response);
-
+      var paymentIntentModel = PaymentIntentModel.fromJson(response.data);
       return paymentIntentModel;
     } catch (e) {
       rethrow;
     }
   }
 
-  Future initPaymentSheet(String paymentIntentClientSecret) async {
+  Future initPaymentSheet({required String paymentIntentClientSecret}) async {
     try {
       await Stripe.instance.initPaymentSheet(
         paymentSheetParameters: SetupPaymentSheetParameters(
@@ -49,7 +49,8 @@ class StripeService {
 
   Future makePayment(PaymentIntentInputModel paymentIntentInputModel) async {
     var paymentIntentModel = await createPaymentIntent(paymentIntentInputModel);
-    await initPaymentSheet(paymentIntentModel.clientSecret!);
+    await initPaymentSheet(
+        paymentIntentClientSecret: paymentIntentModel.clientSecret!);
     await displayPaymentSheet();
   }
 }

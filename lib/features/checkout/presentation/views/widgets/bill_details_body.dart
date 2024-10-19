@@ -25,7 +25,7 @@ class BillDetailsBody extends StatelessWidget {
             const SizedBox(height: 45),
             const OrderInfoItem(
               title: 'Date',
-              price: '10/10/2024',
+              price: '17/10/2024',
               priceStyle: AppTextStyles.interSemiBold18,
             ),
             const SizedBox(height: 15),
