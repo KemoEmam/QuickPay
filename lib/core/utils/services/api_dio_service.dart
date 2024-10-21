@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 class ApiDioService {
   final Dio _dio;
@@ -6,6 +7,7 @@ class ApiDioService {
   ApiDioService()
       : _dio = Dio(
           BaseOptions(
+            baseUrl: dotenv.env['BASE_URL']!,
             connectTimeout: const Duration(seconds: 60),
             receiveTimeout: const Duration(seconds: 60),
             sendTimeout: const Duration(seconds: 60),
@@ -16,6 +18,7 @@ class ApiDioService {
 
   Future<Response> post(
       {required String endPoint,
+      Map<String, dynamic>? headers,
       required body,
       String? token,
       String? contentType}) async {
@@ -23,7 +26,7 @@ class ApiDioService {
       var response = await _dio.post(endPoint,
           data: body,
           options: Options(
-              headers: {'Authorization': 'Bearer $token'},
+              headers: headers ?? {'Authorization': 'Bearer $token'},
               contentType: contentType));
       return response;
     } on DioException catch (e) {
